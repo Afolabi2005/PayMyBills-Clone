@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Mollen';
+  src: url('../src/assets/mollen-personal-use/Mollen\ Personal\ Use-Regular.otf')
+}
+@import 'tailwindcss';
+
+@layer base {
+  html,
+  body {
+    font-family: 'Mollen', system-ui, -apple-system, 'Segoe UI', Roboto,
+      'Helvetica Neue', Arial, sans-serif;
+  }
+}
