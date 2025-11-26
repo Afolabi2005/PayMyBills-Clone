@@ -40,17 +40,21 @@ const Transactions = () => {
     },
   ];
 
-  const NotSuccess = transactionItems.filter((item) => item.name === "Unsuccessful" || item.name === "pending" );
+  const NotSuccess = transactionItems.filter(
+    (item) => item.name === "Unsuccessful" || item.name === "pending"
+  );
   const Success = transactionItems.filter((item) => item.name === "Successful");
 
-const formatAmount = (amount) => {
-  const numeric = parseFloat(amount.replace(/[^\d]/g, ""));
-  return isNaN(numeric) ? "0" : `N${new Intl.NumberFormat().format(numeric)}`;
-};
-
+  const formatAmount = (amount) => {
+    const numeric = parseFloat(amount.replace(/[^\d]/g, ""));
+    return isNaN(numeric) ? "0" : `N${new Intl.NumberFormat().format(numeric)}`;
+  };
 
   return (
     <div className="p-8">
+      <h1 className="text-[20px] font-light">
+        All <span className="text-[#2C2C4B] font-bold">Transactions </span>
+      </h1>
       <div className="p-4">
         <div className="flex flex-row gap-4">
           <button
@@ -90,17 +94,28 @@ const formatAmount = (amount) => {
           {/** Transactions */}
           <div>
             {transactionItems.map((item, index) => (
-              <div
-                className="grid grid-cols-5 items-center m-4"
-                key={index}
-              >
+              <div className="grid grid-cols-5 items-center m-4" key={index}>
                 <img src={item.icon} alt="" />
                 <div className="mt3 flex flex-col gap-0">
                   <p className="text-[15px]">{item.title}</p>
                   <p className="text-[12px] text-[#7B7B7B]">{item.date}</p>
                 </div>
-                <p className="mt-3 text-[15px]">{item.TelId.slice(0, 0) + "*************" + item.TelId.slice(-3)}</p>
-                <p className={item.name === "pending" ? "mt-3 text-[15px] text-[#FFD504]" : item.name === "Unsuccessful" ? "mt-3 text-[15px] text-[#E2001099]" : "mt-3 text-[15px] text-[#01CA76]"}>{item.name.toLowerCase()}</p>
+                <p className="mt-3 text-[15px]">
+                  {item.TelId.slice(0, 0) +
+                    "*************" +
+                    item.TelId.slice(-3)}
+                </p>
+                <p
+                  className={
+                    item.name === "pending"
+                      ? "mt-3 text-[15px] text-[#FFD504]"
+                      : item.name === "Unsuccessful"
+                      ? "mt-3 text-[15px] text-[#E2001099]"
+                      : "mt-3 text-[15px] text-[#01CA76]"
+                  }
+                >
+                  {item.name.toLowerCase()}
+                </p>
                 <p className="mt-3 text-[15px]">{formatAmount(item.amount)}</p>
               </div>
             ))}
@@ -110,41 +125,63 @@ const formatAmount = (amount) => {
       {active === "successful" && (
         <div className="p-8">
           {Success.map((item, index) => (
-            <div
-              className="grid grid-cols-5 items-center m-4"
-              key={index}
-            >
+            <div className="grid grid-cols-5 items-center m-4" key={index}>
               <img src={item.icon} alt="" />
               <div className="mt3 flex flex-col gap-0">
                 <p className="text-[15px]">{item.title}</p>
                 <p className="text-[12px] text-[#7B7B7B]">{item.date}</p>
               </div>
-              <p className="mt-3 text-[15px]">{item.TelId.slice(0, 0) + "*************" + item.TelId.slice(-3)}</p>
-              <p className={item.name === "pending" ? "mt-3 text-[15px] text-[#FFD504]" : item.name === "Unsuccessful" ? "mt-3 text-[15px] text-[#E2001099]" : "mt-3 text-[15px] text-[#01CA76]"}>{item.name.toLowerCase()}</p>
+              <p className="mt-3 text-[15px]">
+                {item.TelId.slice(0, 0) +
+                  "*************" +
+                  item.TelId.slice(-3)}
+              </p>
+              <p
+                className={
+                  item.name === "pending"
+                    ? "mt-3 text-[15px] text-[#FFD504]"
+                    : item.name === "Unsuccessful"
+                    ? "mt-3 text-[15px] text-[#E2001099]"
+                    : "mt-3 text-[15px] text-[#01CA76]"
+                }
+              >
+                {item.name.toLowerCase()}
+              </p>
               <p className="mt-3 text-[15px]">{formatAmount(item.amount)}</p>
             </div>
           ))}
         </div>
       )}
       {active === "unsuccessful" && (
-        <div className="p-8"> 
+        <div className="p-8">
           {NotSuccess.map((item, index) => (
-            <div
-              className="grid grid-cols-5 items-center m-4" 
-              key={index}
-            >
+            <div className="grid grid-cols-5 items-center m-4" key={index}>
               <img src={item.icon} alt="" />
               <div className="mt3 flex flex-col gap-0">
                 <p className="text-[15px]">{item.title}</p>
                 <p className="text-[12px] text-[#7B7B7B]">{item.date}</p>
               </div>
-              <p className="mt-3 text-[15px]">{item.TelId.slice(0, 0) + "*************" + item.TelId.slice(-3)}</p>
-              <p className={item.name === "pending" ? "mt-3 text-[15px] text-[#FFD504]" : item.name === "Unsuccessful" ? "mt-3 text-[15px] text-[#E2001099]" : "mt-3 text-[15px] text-[#01CA76]"}>{item.name.toLowerCase()}</p>
+              <p className="mt-3 text-[15px]">
+                {item.TelId.slice(0, 0) +
+                  "*************" +
+                  item.TelId.slice(-3)}
+              </p>
+              <p
+                className={
+                  item.name === "pending"
+                    ? "mt-3 text-[15px] text-[#FFD504]"
+                    : item.name === "Unsuccessful"
+                    ? "mt-3 text-[15px] text-[#E2001099]"
+                    : "mt-3 text-[15px] text-[#01CA76]"
+                }
+              >
+                {item.name.toLowerCase()}
+              </p>
               <p className="mt-3 text-[15px]">{formatAmount(item.amount)}</p>
             </div>
           ))}
         </div>
-      )} 
+      )}
     </div>
   );
 };

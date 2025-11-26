@@ -49,7 +49,7 @@ function CenterBody({
           <img className="w-[100px] pt-1 ml-2" src={Logo} alt="" />
           <HamburgerMenu menus={Menus} />
         </nav>
-        <div className="p-4 md:p-0">
+        <div className="p-4 md:p-0 max-w-[600px]">
           <div className="shadow-md rounded-lg border border-gray-300 p-2 flex justify-between items-center sticky top-3 bg-white mt-3">
             <FaSearch className="ml-4 text-gray-500 font-light" />
             <input className="w-full indent-2 border-none outline-none" />

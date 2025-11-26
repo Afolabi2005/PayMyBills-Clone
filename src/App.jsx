@@ -27,7 +27,7 @@ function App() {
             <div
               className={
                 location.pathname === "/transactions"
-                  ? `grid grid-cols-[200px_9fr] gap-4`
+                  ? `grid grid-cols-[200px_auto] gap-4`
                   : `grid grid-cols-1 md:grid-cols-[250px_2fr_1fr] gap-4`
               }
             >
@@ -35,7 +35,10 @@ function App() {
                 activeMenu={activeMenu}
                 setActiveMenu={setActiveMenu}
               />
-              <CenterBody activeMenu={activeMenu} />
+              <div className={location.pathname !== "/transactions" ? "max-w-[600px] w-full" : ""}>
+                <CenterBody activeMenu={activeMenu} />
+              </div>
+
               <RightBoard activeMenu={activeMenu} />
             </div>
           }
