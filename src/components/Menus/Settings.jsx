@@ -9,8 +9,8 @@ const Settings = () => {
 
   return (
     <div className="p-8">
-      <h2 className="mb-5 text-[18px] font-bold">Settings</h2>
-      <div className="p-4">
+      <h2 className="mb-10 text-[18px] font-bold">Settings</h2>
+      <div className="p-4 px-24">
         <div className="flex flex-row gap-4">
           <button
             onClick={() => toggleActive("security")}
@@ -36,15 +36,15 @@ const Settings = () => {
       </div>
       {active === "security" && (
         <>
-          <div className="mt-4 px-4 py-2">
+          <div className="mt-4 px-24 py-2">
             <h3 className="text-[18px] text-[#5E5475] mb-2.5">
               Change Password
             </h3>
-            <p className="text-[14px] font-light text-[#B8B8B8]">
+            <p className="text-[14px] mb-4 font-light text-[#B8B8B8]">
               Amet minim mollit non deserunt ullamco est sit aliqua
             </p>
           </div>
-          <div className="flex flex-row gap-4 px-4 py-2">
+          <div className="flex flex-row gap-4 mb-4 px-24 py-2">
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="Old-password"
@@ -82,7 +82,7 @@ const Settings = () => {
 
       {active === "addCard" && (
         <>
-        <div className="mt-4 px-4 py-2">
+        <div className="mt-4 px-24 mb-4 py-2">
           <h3 className="text-[18px] text-[#5E5475] mb-2.5">
             Add a new card
           </h3>
@@ -90,7 +90,7 @@ const Settings = () => {
             Amet minim mollit non deserunt ullamco est sit aliqua
           </p>
         </div>
-        <div className="flex flex-row gap-4 px-4 py-2">
+        <div className="flex flex-row gap-4 px-24 mb-4 py-2">
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="Old-password"
@@ -118,7 +118,7 @@ const Settings = () => {
               />
             </div>
           </div>
-          <div className="flex flex-row gap-4 px-4 py-2">
+          <div className="flex flex-row gap-4 px-24 mb-4 py-2">
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="Old-password"
